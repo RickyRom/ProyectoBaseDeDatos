@@ -1,5 +1,8 @@
 
 import javax.swing.JFrame;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,6 +21,23 @@ JFrame frame = new JFrame();
      */
     public Dealership() {
         initComponents();
+        try {
+            System.out.println("Intentando conectar a la base de datos");
+            Class.forName("com.mysql.jdbc.Driver");
+        
+            Connection con = DriverManager.getConnection("");
+            System.out.println("Coneccíon exitosa");
+            
+            Statement estado = con.createStatement();
+            ResultSet resultado = estado.executeQuery("");
+            
+        } catch (SQLException e) {
+            System.out.println("error de MySQL");
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        } catch (Exception exc) {
+            System.out.println("se encontro el siguiente error: " + exc.getMessage());
+        }     
     }
 
     /**
