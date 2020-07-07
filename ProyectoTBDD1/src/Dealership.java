@@ -25,56 +25,9 @@ public class Dealership extends javax.swing.JFrame {
     public Dealership() {
         initComponents();
 
-//        try {
-//            System.out.println("Intentando conectar a la base de datos");
-//            Class.forName("com.mysql.jdbc.Driver");
-//        
-//            Connection con = DriverManager.getConnection("");
-//            System.out.println("Coneccíon exitosa");
-//            
-//            Statement estado = con.createStatement();
-//            ResultSet resultado = estado.executeQuery("");
-//            
-//        } catch (SQLException e) {
-//            System.out.println("error de MySQL");
-//        } catch (ClassNotFoundException ex) {
-//            ex.printStackTrace();
-//        } catch (Exception exc) {
-//            System.out.println("se encontro el siguiente error: " + exc.getMessage());
-//        }     
-    }
 
-//    void mostrardatos(String valor) {
-//        conectar c = new conectar();
-//        Connection con = c.car_dealership();
-//        DefaultTableModel modelo = new DefaultTableModel();
-//      
-//        modelo.addColumn("nombre");
-//        modelo.addColumn("ingreso_anual");
-//        modelo.addColumn("telefono");
-//        jTable1.setModel(modelo);
-//        String sql = "";
-//        if (valor.equals("")) {
-//            sql = "SELECT * FROM car_dealership";
-//        }else {
-//            sql = "SELECT * FROM car_dealership WHERE (nombre='"+valor+"' OR ingreso_anual='"+valor+"' OR telefono='"+valor+"')";
-//        }
-//        
-//        String []datos = new String[3];
-//        try {
-//            Statement st = con.createStatement();
-//            ResultSet rs = st.executeQuery(sql);
-//            while (rs.next()) {
-//                datos[0] = rs.getString(1);
-//                datos[1] = rs.getString(2);
-//                datos[2] = rs.getString(3);
-//                modelo.addRow(datos);
-//            }
-//            jTable1.setModel(modelo);
-//        } catch (SQLException e) {
-//            //Logger.getLogger(datos.class.getName()).log(level.SEVERE,null,e);
-//        }
-//    }
+    
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -105,6 +58,10 @@ public class Dealership extends javax.swing.JFrame {
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jmi_cerrar_usuario = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuItem12 = new javax.swing.JMenuItem();
         login = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         jt_username = new javax.swing.JTextField();
@@ -202,6 +159,16 @@ public class Dealership extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jtidvehiculo_inventario = new javax.swing.JTextField();
         agregar_inventario = new javax.swing.JButton();
+        ver_proveedores = new javax.swing.JDialog();
+        jPanel15 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        ver_marcas = new javax.swing.JDialog();
+        jPanel16 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jMenuBar3 = new javax.swing.JMenuBar();
         jMenu5 = new javax.swing.JMenu();
@@ -350,6 +317,30 @@ public class Dealership extends javax.swing.JFrame {
         jMenu3.add(jmi_cerrar_usuario);
 
         jMenuBar2.add(jMenu3);
+
+        jMenu4.setText("Proveedores");
+
+        jMenuItem11.setText("Ver");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem11);
+
+        jMenuBar2.add(jMenu4);
+
+        jMenu6.setText("Marcas");
+
+        jMenuItem12.setText("Ver Marcas");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem12);
+
+        jMenuBar2.add(jMenu6);
 
         User.setJMenuBar(jMenuBar2);
 
@@ -1146,6 +1137,108 @@ public class Dealership extends javax.swing.JFrame {
             .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        jButton1.setText("Mostrar Datos");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(105, Short.MAX_VALUE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jButton1)
+                .addGap(45, 45, 45)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(96, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout ver_proveedoresLayout = new javax.swing.GroupLayout(ver_proveedores.getContentPane());
+        ver_proveedores.getContentPane().setLayout(ver_proveedoresLayout);
+        ver_proveedoresLayout.setHorizontalGroup(
+            ver_proveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ver_proveedoresLayout.createSequentialGroup()
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        ver_proveedoresLayout.setVerticalGroup(
+            ver_proveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ver_proveedoresLayout.createSequentialGroup()
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
+
+        jButton2.setText("Mostrar Datos");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(100, Short.MAX_VALUE))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
+        );
+
+        javax.swing.GroupLayout ver_marcasLayout = new javax.swing.GroupLayout(ver_marcas.getContentPane());
+        ver_marcas.getContentPane().setLayout(ver_marcasLayout);
+        ver_marcasLayout.setHorizontalGroup(
+            ver_marcasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ver_marcasLayout.setVerticalGroup(
+            ver_marcasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -1507,6 +1600,28 @@ public class Dealership extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_agregar_inventarioMouseClicked
 
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        ver_proveedores.setModal(true);
+        ver_proveedores.pack();
+        ver_proveedores.setLocationRelativeTo(this);
+        ver_proveedores.setVisible(true);
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        mostrardatos("");
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        mostrardatosMarca("");
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        ver_marcas.setModal(true);
+        ver_marcas.pack();
+        ver_marcas.setLocationRelativeTo(this);
+        ver_marcas.setVisible(true);
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1566,6 +1681,8 @@ public class Dealership extends javax.swing.JFrame {
     private javax.swing.JButton agregar_proveedor;
     private javax.swing.JButton agregar_vehiculo;
     private javax.swing.JToggleButton enter;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1599,12 +1716,16 @@ public class Dealership extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -1619,6 +1740,8 @@ public class Dealership extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1628,7 +1751,11 @@ public class Dealership extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     private javax.swing.JButton jbbuscar_clientes;
     private javax.swing.JButton jbmostrar_clientes;
     private javax.swing.JMenuItem jmi_cerrar_admin;
@@ -1666,8 +1793,76 @@ public class Dealership extends javax.swing.JFrame {
     private javax.swing.JTextField jttransmision_modelo;
     private javax.swing.JTextField jtvin_vehiculo;
     private javax.swing.JDialog login;
+    private javax.swing.JDialog ver_marcas;
+    private javax.swing.JDialog ver_proveedores;
     // End of variables declaration//GEN-END:variables
 
 //String pass = jt_password.getText();
 //String user = jt_username.getText();
+    
+    void mostrardatos(String valor) {
+        conectar c = new conectar();
+        Connection con = c.car_dealership();
+        DefaultTableModel modelo = new DefaultTableModel();
+      
+        modelo.addColumn("nombre");
+        modelo.addColumn("telefono");
+        modelo.addColumn("direccion");
+        jTable2.setModel(modelo);
+        String sql = "";
+        if (valor.equals("")) {
+            sql = "SELECT * FROM proveedor";
+        }else {
+            sql = "SELECT * FROM proveedor WHERE (nombre='"+valor+"' OR telefono='"+valor+"' OR direccion='"+valor+"')";
+        }
+        
+        String []datos = new String[3];
+        try {
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                datos[0] = rs.getString(1);
+                datos[1] = rs.getString(2);
+                datos[2] = rs.getString(3);
+                modelo.addRow(datos);
+            }
+            jTable2.setModel(modelo);
+        } catch (SQLException e) {
+            //Logger.getLogger(datos.class.getName()).log(level.SEVERE,null,e);
+        }
+    }
+    
+    
+    
+    void mostrardatosMarca(String valor) {
+        conectar c = new conectar();
+        Connection con = c.car_dealership();
+        DefaultTableModel modelo = new DefaultTableModel();
+      
+        modelo.addColumn("idmarca");
+        modelo.addColumn("nombre");
+        modelo.addColumn("VEHICULO_idvehiculo");
+        jTable3.setModel(modelo);
+        String sql = "";
+        if (valor.equals("")) {
+            sql = "SELECT * FROM marca";
+        }else {
+            sql = "SELECT * FROM marca WHERE (idmarca='"+valor+"' OR nombre='"+valor+"' OR VEHICULO_idvehiculo='"+valor+"')";
+        }
+        
+        String []datos = new String[3];
+        try {
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                datos[0] = rs.getString(1);
+                datos[1] = rs.getString(2);
+                datos[2] = rs.getString(3);
+                modelo.addRow(datos);
+            }
+            jTable3.setModel(modelo);
+        } catch (SQLException e) {
+            //Logger.getLogger(datos.class.getName()).log(level.SEVERE,null,e);
+        }
+    }
 }
